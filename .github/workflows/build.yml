@@ -332,6 +332,7 @@ jobs:
       PUPPETEER_SKIP_DOWNLOAD: true
 
     strategy:
+      fail-fast: false
       matrix:
         config: ${{ fromJson(needs.select-targets.outputs.build-matrix) }}
     runs-on: ${{ matrix.config.runs-on }}
